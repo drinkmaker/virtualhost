@@ -163,18 +163,11 @@ if [ "$action" == 'create' ]
 
 		### check if directory exists or not
 		if [ -d $rootDir ]; then
-			echo -e $"Delete host root directory ? (y/n)"
-			read deldir
-
-			if [ "$deldir" == 'y' -o "$deldir" == 'Y' ]; then
-				### Delete the directory
-				rm -rf $rootDir
-				echo -e $"Directory deleted"
-			else
-				echo -e $"Host directory conserved"
-			fi
+			### Delete the directory
+			rm -rf $rootDir
+			echo -e $"Directory deleted"
 		else
-			echo -e $"Host directory not found. Ignored"
+			echo -e $"Host directory conserved"
 		fi
 
 		### show the finished message
